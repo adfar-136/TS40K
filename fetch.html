@@ -7,5 +7,23 @@
 </head>
 <body>
     
+    <h1>News api application</h1>
+    <div id="main"></div>
+    <script>
+        const element = document.getElementById("main");
+        var data = fetch("https://newsapi.org/v2/everything?q=tesla&from=2023-12-12&sortBy=publishedAt&apiKey=28a2c6b3aa1945c2afd8012e42fdac9e")
+        data.then((result)=>{result.json().then((response)=>{
+           response.articles.map((item)=>{
+               const listItem = document.createElement("div")
+               listItem.innerHTML=`<h1>${item.title}</h1>
+               <p>${item.description}</p>
+               <img src=${item.urlToImage}/>
+               <a href=${item.url}>Read More</a>`
+               element.appendChild(listItem)
+           })
+
+        })})
+        
+    </script>
 </body>
 </html>

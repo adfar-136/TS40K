@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="main"></div>
+    <button onclick="generateJoke()">Generate Joke</button>
+    <script>
+        const element = document.getElementById("main")
+       async function generateJoke(){
+         const data =await fetch("https://official-joke-api.appspot.com/random_joke");
+         const response =await data.json()
+         console.log(response);
+         const h1= document.createElement("h1")
+         h1.innerHTML = response.setup +" " + response.punchline
+         element.appendChild(h1)
+        }
+    </script>
+</body>
+</html>
