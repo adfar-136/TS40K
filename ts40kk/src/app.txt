@@ -1,0 +1,118 @@
+// Jsx intrduction 
+
+function App() {
+  return (
+    <div className="App">
+      <h1>Adfar RAsheed</h1>
+      {header}
+      {header}
+      {main}
+      {header}
+      {header}
+      <h3>{name}</h3>
+    </div>
+  );
+}
+const myStyle = {
+  color: "red",
+  fontSize:"40px",
+  backgroundColor:"pink",
+  padding:"30px" 
+}
+const header = <h1 style={{color:"red",fontSize:"50px",backgroundColor:"blue"}}>LPU React Course</h1>
+const main = <div style={myStyle}><h1>Welcome to resact course</h1><p>Started yesterday</p></div>
+const name = "Adfar"
+export default App;
+
+
+function Header(){
+  return (
+    <div>
+      <h1>Header Component</h1>
+      <Main/>
+    </div>
+  )
+}
+function Main(){
+  return (
+    <div>
+      <h1>MAin Component</h1>
+    </div>
+  )
+}
+function App(){
+  return (
+    <div>
+      <h1>Adfar Rasheed</h1>
+      <Header/>
+      <Header/>
+      <Header/>
+      <Header/>
+      
+    </div>
+  )
+}
+export default App;
+
+//<div class="progress">
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-primary" role="progressbar"
+        style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">import About from "./components/About"
+function App(props){
+  var name="Adfar Rasheed";
+  var age =27;
+  var salary=2000;
+  return (
+    <div>
+      <h1>Adfar Rasheed</h1>
+      <About naam={name} umar={age} tankha={salary} gender="male"/>
+      
+    </div>
+  )
+}
+export default App;</div>
+</div>
+
+import React from 'react'
+import Propsdata from './components/Propsdata'
+
+function App() {
+  var obj ={
+    name:"React",
+    start:19,
+    end:30
+  }
+  return (
+    <div>
+      <Propsdata age={24} data = {["Adfar","Lpu","newton","Adfar","React"]} obj={obj}/>
+      <h1>{obj.name}</h1>
+    </div>
+  )
+}
+
+export default App
+
+import React from 'react'
+import Dialog from './components/Dialog'
+import Child from './Child'
+
+function App() {
+  return (
+    <div>
+      <Dialog>
+        <div>
+          <h1>Hello welcome</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi sint omnis et, architecto consectetur nulla non! Repudiandae ea recusandae dicta doloremque odio quasi consequatur doloribus veritatis, quos quaerat eum fugit, incidunt accusantium officia alias cum sunt nihil quibusdam iusto, laboriosam voluptatum. Facilis nesciunt at sit dolorum voluptate illum, nihil itaque, est corporis aspernatur veritatis dolor eligendi perspiciatis eveniet eum iusto facere ipsam! Est veniam, quia non at, reiciendis rem, quae praesentium laudantium dolor facilis cumque in neque voluptatibus recusandae quisquam incidunt ipsa exercitationem fugiat nesciunt hic cupiditate repudiandae laborum perspiciatis. Dolorum iste, dolor harum placeat itaque debitis sunt reiciendis laborum eveniet animi repellat provident at aperiam et, vitae autem enim ullam veniam numquam ipsa quasi necessitatibus recusandae molestias. Assumenda illum repudiandae velit praesentium nesciunt itaque corporis deleniti sunt unde reiciendis error quod suscipit facilis, rerum eos. Eveniet, quis facilis perferendis inventore unde ut non dolor perspiciatis id, ea impedit nobis, nostrum quibusdam accusamus minus! Atque adipisci recusandae ipsam, aspernatur consequatur quibusdam rerum libero ex maxime at vitae exercitationem autem? Alias in inventore sint dolores debitis illo consectetur veniam fugit quam numquam. Sint, provident nostrum itaque facere eveniet facilis quod pariatur tenetur reprehenderit fuga. Possimus quaerat hic eos fugiat pariatur, at modi dolores? Minima harum, soluta commodi mollitia illum adipisci unde ab quia facilis deserunt dignissimos omnis est totam magnam accusamus sit dolorum voluptatum ratione! Dolorem, dolores nihil temporibus at aperiam unde fugiat, esse architecto repudiandae fuga debitis velit, libero ipsa quidem cum maxime dolor iste porro voluptatum iusto cupiditate sit deleniti illo. Sint, quo. Magnam esse beatae odit officiis tempora laboriosam velit, iure perspiciatis vel obcaecati doloribus provident earum mollitia voluptates omnis odio consequuntur assumenda libero fugiat id unde illo facilis fuga! Laudantium, asperiores? Ipsum, possimus? Dolorum sapiente doloribus reprehenderit numquam labore, perferendis vero, quaerat laboriosam obcaecati, deleniti nobis!</p>
+          <small>hello welcomehgsdhug</small>
+        </div>
+        <div>
+          <h1>Hello welcome</h1>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit quasi sint omnis et, architecto consectetur nulla non! Repudiandae ea recusandae dicta doloremque odio quasi consequatur doloribus veritatis, quos quaerat eum fugit, incidunt accusantium officia alias cum sunt nihil quibusdam iusto, laboriosam voluptatum. Facilis nesciunt at sit dolorum voluptate illum, nihil itaque, est corporis aspernatur veritatis dolor eligendi perspiciatis eveniet eum iusto facere ipsam! Est veniam, quia non at, reiciendis rem, quae praesentium laudantium dolor facilis cumque in neque voluptatibus recusandae quisquam incidunt ipsa exercitationem fugiat nesciunt hic cupiditate repudiandae laborum perspiciatis. Dolorum iste, dolor harum placeat itaque debitis sunt reiciendis laborum eveniet animi repellat provident at aperiam et, vitae autem enim ullam veniam numquam ipsa quasi necessitatibus recusandae molestias. Assumenda illum repudiandae velit praesentium nesciunt itaque corporis deleniti sunt unde reiciendis error quod suscipit facilis, rerum eos. Eveniet, quis facilis perferendis inventore unde ut non dolor perspiciatis id, ea impedit nobis, nostrum quibusdam accusamus minus! Atque adipisci recusandae ipsam, aspernatur consequatur quibusdam rerum libero ex maxime at vitae exercitationem autem? Alias in inventore sint dolores debitis illo consectetur veniam fugit quam numquam. Sint, provident nostrum itaque facere eveniet facilis quod pariatur tenetur reprehenderit fuga. Possimus quaerat hic eos fugiat pariatur, at modi dolores? Minima harum, soluta commodi mollitia illum adipisci unde ab quia facilis deserunt dignissimos omnis est totam magnam accusamus sit dolorum voluptatum ratione! Dolorem, dolores nihil temporibus at aperiam unde fugiat, esse architecto repudiandae fuga debitis velit, libero ipsa quidem cum maxime dolor iste porro voluptatum iusto cupiditate sit deleniti illo. Sint, quo. Magnam esse beatae odit officiis tempora laboriosam velit, iure perspiciatis vel obcaecati doloribus provident earum mollitia voluptates omnis odio consequuntur assumenda libero fugiat id unde illo facilis fuga! Laudantium, asperiores? Ipsum, possimus? Dolorum sapiente doloribus reprehenderit numquam labore, perferendis vero, quaerat laboriosam obcaecati, deleniti nobis!</p>
+          <small>hello welcomehgsdhug</small>
+        </div>
+        <Child/>
+      </Dialog>
+    </div>
+  )
+}
+
+export default App

@@ -1,24 +1,10 @@
-
-function App() {
+import React from 'react'
+import About from "./components/About"
+export default function App() {
   return (
-    <div className="App">
-      <h1>Adfar RAsheed</h1>
-      {header}
-      {header}
-      {main}
-      {header}
-      {header}
-      <h3>{name}</h3>
+    <div>
+      <About naam="Adfar" umar="25" tankha="2000"/>
+      <About naam="Ankit" umar="29" tankha="20000000"/>
     </div>
-  );
+  )
 }
-const myStyle = {
-  color: "red",
-  fontSize:"40px",
-  backgroundColor:"pink",
-  padding:"30px" 
-}
-const header = <h1 style={{color:"red",fontSize:"50px",backgroundColor:"blue"}}>LPU React Course</h1>
-const main = <div style={myStyle}><h1>Welcome to resact course</h1><p>Started yesterday</p></div>
-const name = "Adfar"
-export default App;
