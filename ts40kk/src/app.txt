@@ -116,3 +116,64 @@ function App() {
 }
 
 export default App
+
+//counter App
+import React from 'react'
+import {useState} from "react";
+function App() {
+  const [count,setCount] = useState(0);
+  const [number,setNumber] = useState(100);
+  function adfar(){
+    console.log("Adfar")
+  }
+  console.log("lpu")
+  function handleCount(){
+    setCount(count+1);
+    setNumber(number-1);
+  }
+  return (
+    <div>
+      <button onClick={adfar}>ADfar</button>
+      <h1>{count}</h1>
+      <button onClick={handleCount}>Increment</button>
+      <h1>{number}</h1>
+      <button onClick={handleCount}>Decrement</button>
+      <button onClick={()=>{setCount((c)=>c+1);setCount(c=>c+1);setCount(c=>c+1)}}>Increment by 3</button>
+    </div>
+  )
+}
+
+export default App
+
+//themechanger
+import React, { useState } from 'react'
+import "./App.css"
+import Themechanger from './components/Themechanger';
+import Conditionalrendering from './components/Conditionalrendering';
+export default function App() {
+  const [text,setText] = useState("Dark");
+  const [backgroundColor,setBackgroundColor] = useState("white");
+  const [color,setColor] = useState("black");
+  function handleColor(){
+    if(text === "Dark"){
+        setText("Light")
+        setBackgroundColor("black");
+        setColor("white");
+    } else {
+      setText("Dark");
+      setBackgroundColor("white");
+      setColor("black");
+    }
+  }
+  return (
+    <>
+    <div className='main' style={{backgroundColor:backgroundColor,color:color}}>
+      <h1>Hello World!</h1>
+      <button onClick={()=>(handleColor())}>{text}</button>
+      <Themechanger/>
+    </div>
+    <Conditionalrendering/>
+    </>
+    
+  )
+}
