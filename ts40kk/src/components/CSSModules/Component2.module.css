@@ -1,0 +1,12 @@
+.heading2{
+    background-color: pink;
+    color: blueviolet;
+    padding: 20px;
+    border: 2px solid orange;
+}
+.para2{
+    background-color: khaki;
+    font-size: 12px;
+    padding: 40px;
+    border: dotted green 3px;
+}

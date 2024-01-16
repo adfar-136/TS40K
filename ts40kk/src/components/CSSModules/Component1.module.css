@@ -1,0 +1,22 @@
+.heading1{
+    color: red;
+    background-color: aqua;
+    border: 2px solid green;
+    padding: 40px;
+}
+.para1{
+    color: blue;
+    font-size: 32px;
+    padding: 40px;
+    border: 3px dotted red;
+}
+/* .main-section{
+    width: 300px;
+    height: 300px;
+    font-size: 2rem;
+    border: 2px solid red;
+} */
+
+div h1{
+    text-align: center;
+}
