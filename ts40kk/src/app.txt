@@ -204,3 +204,73 @@ export default function App() {
     
   )
 }
+
+
+form with spread operator 
+
+import React, { useState } from 'react'
+
+function App() {
+  // const [input,setInput] = useState("");
+  // const [password,setPassword] = useState("");
+  // const [email,setEmail] = useState("");
+
+  const [condition,setCondition]  =useState(false);
+  const [list,setList] = useState({
+    name:"",
+    email:"",
+    password:""
+  })
+  function handleSubmit(e){
+    e.preventDefault();
+    setCondition(true);
+  }
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text"  value={list.name} 
+        onChange={(e)=>setList((prev)=>({...prev,name:e.target.value}))}/>
+        <input type="password"  value={list.password} 
+        onChange={(e)=>{setList((prev)=>({...prev,password:e.target.value}))}}/>
+        <input type="email" value={list.email} 
+        onChange={(e)=>setList((prev)=>({...prev,email:e.target.value}))} />
+        <input type="submit" value="Submit" />
+        {condition && (
+          <>
+            <h1>Your Name is:{list.name}</h1>
+          <h1>Your Password is:{list.password}</h1>
+          <h1>Your Email is:{list.email}</h1>
+          </>
+        
+        )}
+        
+      </form>
+    </div>
+  )
+}
+
+export default App
+
+
+
+useEffectr Hook 
+import React, { useEffect, useState } from 'react'
+
+function App() {
+  const [count,setCount]  = useState(0);
+  const [number,setNumber] = useState(100);
+  useEffect(()=>{
+    console.log("useEffect")
+  },[count,number])
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <h1>{number}</h1>
+      <button onClick={()=>setNumber(number-1)}>Decrement</button>
+
+    </div>
+  )
+}
+
+export default App
