@@ -1,5 +1,6 @@
 .main{
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -11,6 +12,52 @@
     padding: 30px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
+    gap: 30px; 
+}
+.img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 30px;
+    background-color: rgb(210, 206, 206);
+}
+.inner{
+    display: flex;
     gap: 30px;
-    
+}
+.btn{
+    text-decoration: none;
+    padding: 30px;
+    width: 50%;
+    background-color: rgb(210, 224, 19);
+    border-radius: 20px;
+    text-align: center;
+    font-size: 34px;
+    font-weight: 900;
+}
+.form{
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+.search{
+    width: 90%;
+    padding: 20px;
+    border-radius: 20px;
+    font-size: 35px;
+    text-align: center;
+
+}
+.btnn{
+    padding: 20px;
+    font-size: 30px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
 }
