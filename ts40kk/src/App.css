@@ -4,8 +4,9 @@
   align-items: center;
 }
 .active{
-  color: white;
-  background-color: black;
+  color: blue;
+  text-decoration: solid underline red 5px;
+
 }
 .not-active{
   color: "black";
