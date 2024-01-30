@@ -416,3 +416,130 @@ export default function App() {
     </div>
   )
 }
+
+
+//localstorage 
+
+import React from 'react'
+import { useState } from 'react'
+
+export default function App() {
+  const [inputs,setInputs] = useState({
+    name:"",
+    email:"",
+    password:""
+  })
+  const handleChange=(e)=>{
+     const {name,value} = e.target;
+     setInputs({...inputs,[name]:value})
+  }
+  const handleSubmit =(e)=>{
+    e.preventDefault()
+    // localStorage.setItem("userInfo",JSON.stringify(inputs))
+    localStorage.setItem("name",inputs.name)
+    localStorage.setItem("email",inputs.email)
+    localStorage.setItem("pass",inputs.password)
+    setInputs({name:"",email:"",password:""})
+  }
+  const handleRemove=()=>{
+    localStorage.removeItem("name")
+    localStorage.removeItem("email")
+    localStorage.removeItem("pass")
+  }
+  return (
+    <div>
+    
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={inputs.name} name='name'
+          onChange={handleChange}/> <br /><br />
+          <input type="email" value={inputs.email} name='email'
+          onChange={handleChange}/><br/> <br />
+          <input type="password" value={inputs.password} name='password'
+          onChange={handleChange}/> <br /> <br />
+          <input type="submit" value="SignUp" />
+        </form>
+        <button onClick={handleRemove}>Remove</button>
+        {localStorage.getItem("name") && (
+          <h1>Name :{localStorage.getItem("name")}</h1>
+        )}
+   
+     
+      
+    </div>
+  )
+}
+
+
+import React, { useMemo, useState } from 'react'
+import Istcomponent from './Efficiency/Istcomponent'
+
+export default function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(1000)
+  console.log("Parent app component");
+  // useMemo(()=>{
+
+  // },[])
+  const isEven = useMemo(()=>{
+    
+      let i=0;
+      while(i<2000000000) i++;
+      return count %2 === 0;
+    
+  },[count])
+  return (
+    <div>
+  <p>Adfar</p>
+      <h1>countt: {count}</h1>
+      <button onClick={()=>setCount(count+1)}> Increment</button>
+      <h1>{isEven?"EVEN":"ODD"}</h1>
+      <h1>Number: {number}</h1>
+      <button onClick={()=>setNumber(number-1)}>Decrement</button>
+      <Istcomponent name={20} isEven={isEven}/>
+
+    </div>
+  )
+}
+
+
+//useCallback 
+
+import React from 'react'
+import { useCallback } from 'react';
+import { useState } from 'react'
+const x = new Set()
+export default function App() {
+  const [count,setCount] = useState(0)
+  const [number,setNumber] = useState(1000);
+  const handleIncrement =useCallback(
+    ()=>{
+      setCount(count+1)
+    },[count]
+  ) 
+  const handleDecrement =useCallback(
+    ()=>{
+      setCount(count-1)
+    },[count]
+  ) 
+  const handleIncrementnumber = useCallback(()=>{
+    setNumber(number+1)
+  },[number])
+  const handleDecrementnumber =useCallback(()=>{
+    setNumber(number-1)
+  },[number])
+  x.add(handleDecrement)
+  x.add(handleIncrement)
+  x.add(handleIncrementnumber)
+  x.add(handleDecrementnumber)
+  alert(x.size)
+  return (
+    <div>
+      <h1>{count}</h1>
+      <h1>{number}</h1>
+      <button onClick={handleIncrement}>Increment count</button>
+      <button onClick={handleDecrement}>Decrement count</button>
+      <button onClick={handleIncrementnumber}>increment number</button>
+      <button onClick={handleDecrementnumber}>Decrement number</button>
+    </div>
+  )
+}

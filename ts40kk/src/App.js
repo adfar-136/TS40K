@@ -1,48 +1,24 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
+import Modal from './Modal'
 
 export default function App() {
-  const [inputs,setInputs] = useState({
-    name:"",
-    email:"",
-    password:""
-  })
-  const handleChange=(e)=>{
-     const {name,value} = e.target;
-     setInputs({...inputs,[name]:value})
-  }
-  const handleSubmit =(e)=>{
-    e.preventDefault()
-    // localStorage.setItem("userInfo",JSON.stringify(inputs))
-    localStorage.setItem("name",inputs.name)
-    localStorage.setItem("email",inputs.email)
-    localStorage.setItem("pass",inputs.password)
-    setInputs({name:"",email:"",password:""})
-  }
-  const handleRemove=()=>{
-    localStorage.removeItem("name")
-    localStorage.removeItem("email")
-    localStorage.removeItem("pass")
-  }
+  const [condition,setCondition] = useState(false)
   return (
     <div>
-    
-        <form onSubmit={handleSubmit}>
-          <input type="text" value={inputs.name} name='name'
-          onChange={handleChange}/> <br /><br />
-          <input type="email" value={inputs.email} name='email'
-          onChange={handleChange}/><br/> <br />
-          <input type="password" value={inputs.password} name='password'
-          onChange={handleChange}/> <br /> <br />
-          <input type="submit" value="SignUp" />
-        </form>
-        <button onClick={handleRemove}>Remove</button>
-        {localStorage.getItem("name") && (
-          <h1>Name :{localStorage.getItem("name")}</h1>
-        )}
-   
-     
-      
+      <h1>Home Page</h1>
+      <div id="container">
+        
+      </div>
+      <button onClick={()=>setCondition(true)}>Show Modal</button>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, consequatur est. Omnis unde autem sapiente sed cupiditate facere maxime sunt doloribus, deserunt quaerat, repudiandae id et numquam. Neque, repellendus voluptate.</p>
+      <div>
+       <Modal condition={condition}>
+        <div>
+          <h1>Modal component</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe tempora vitae provident delectus, animi adipisci, amet reiciendis earum quia illo aspernatur dolores quibusdam porro necessitatibus odit illum voluptatibus itaque dignissimos totam consequatur sapiente praesentium in et? Asperiores ullam sapiente earum.</p>
+        </div>
+       </Modal>
+      </div>
     </div>
   )
 }

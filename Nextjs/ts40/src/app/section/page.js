@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function user() {
+export default function Section() {
   return (
     <div>
-        <h1>Users deatils</h1>
+        <h1>Section</h1>
     </div>
   )
 }
