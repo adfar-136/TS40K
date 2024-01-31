@@ -543,3 +543,73 @@ export default function App() {
     </div>
   )
 }
+
+
+//portals 
+import React, { useState } from 'react'
+import Modal from './Modal'
+import "./App.css"
+export default function App() {
+  const [condition,setCondition] = useState(false)
+  return (
+    <div className='container'>
+      <h1>Home Page</h1>
+      <button onClick={()=>setCondition(true)}>Show Modal</button>
+      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt, consequatur est. Omnis unde autem sapiente sed cupiditate facere maxime sunt doloribus, deserunt quaerat, repudiandae id et numquam. Neque, repellendus voluptate.</p>
+      <div>
+       <Modal condition={condition}>
+        <div>
+          <h1>Modal component</h1>
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe tempora vitae provident delectus, animi adipisci, amet reiciendis earum quia illo aspernatur dolores quibusdam porro necessitatibus odit illum voluptatibus itaque dignissimos totam consequatur sapiente praesentium in et? Asperiores ullam sapiente earum.</p>
+        </div>
+       </Modal>
+      </div>
+    </div>
+  )
+}
+
+//lazyloading 
+import React, { Suspense, lazy } from 'react'
+import Adfar from './Efficiency/LazyLoading/Adfar';
+const Compo1 = lazy(()=>import("./Efficiency/LazyLoading/Compo1"));
+const Compo2 = lazy(()=>import("./Efficiency/LazyLoading/Compo2"));
+
+
+export default function App() {
+  return (
+    <div>
+        <Suspense fallback={<div>Please wait.....</div>}>
+          <Compo1/>
+        </Suspense>
+        <Suspense fallback={<h1>Wait karo.....</h1>}>
+            <Compo2/>
+        </Suspense>
+        <Adfar/>
+    </div>
+  )
+}
+
+
+//errorboundary 
+
+import React from 'react'
+import Counter from './Efficiency/ErrorBoundary/Counter'
+import Errorbounday from './Efficiency/ErrorBoundary/Errorbounday'
+
+export default function App() {
+  return (
+    <div>
+        <Errorbounday>
+            <Counter/>
+        </Errorbounday>
+        <Errorbounday>
+            <Counter/>
+        </Errorbounday>
+        <Errorbounday>
+            <Counter/>
+        </Errorbounday>
+        <h1>Hello welocme</h1>
+    </div>
+  )
+}
+
