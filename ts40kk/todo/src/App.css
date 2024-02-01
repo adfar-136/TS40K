@@ -1,0 +1,30 @@
+.container{
+  display: grid;
+  width: 100%;
+  height: 100%;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr 5fr;
+  margin: 30px;
+  box-sizing: border-box;
+}
+.container h1{
+  border: 2px solid red;
+  text-align: center;
+  padding: 20px;
+  width: 90%;
+}
+.container .row{
+  border: 2px solid blue;
+  width: 90%;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 20px;
+
+}
+.row .item1{
+  border: 2px solid red;
+}
+.row .item2{
+  border: 2px solid red;
+}

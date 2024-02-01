@@ -613,3 +613,62 @@ export default function App() {
   )
 }
 
+
+//refs 
+import React, { useRef, useState } from 'react'
+
+export default function App() {
+  const [input,setInput] = useState("")
+  const name  =  useRef()
+  const email = useRef()
+  const pass = useRef()
+  const handleSubmit=(e)=>{
+    e.preventDefault()
+    console.log(name.current.value,email.current.value,pass.current.value)
+  }
+  const handleChange=(e)=>{
+    let value = e.target.value;
+    setInput((prevValue)=>({...prevValue,[name.current.id]:value}))
+  }
+  
+  return (
+    <div>
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={name}  onChange={handleChange}/>
+        <input type="email" ref={email} />
+        <input type="password" ref={pass} />
+        <button type="submit">Submit</button>
+      </form>
+      {name.current && <h1>Name:{name.current.value}</h1> }
+      {email.current && <h1>Email:{email.current.value}</h1>}
+     {pass.current &&  <h1>Password:{pass.current.value}</h1>}
+      
+    </div>
+  )
+}
+
+// Refs 
+
+import React, { useEffect, useRef } from 'react'
+
+export default function App() {
+  const inputRef  = useRef();
+  const divRef = useRef();
+  const handleDiv = ()=>{
+    divRef.current.innerHTML ="Hello Welcome React"
+  }
+  useEffect(()=>{
+    inputRef.current.focus()
+  },[])
+  return (
+    <div>
+      <input type="text" />
+      <input type="text"  />
+      <input type="text" ref={inputRef}  />
+      <input type="text"  />
+      <div ref={divRef}>ADfar</div>
+      <button onClick={() => console.log(divRef.current)} >click me</button>
+      <button onClick={()=>handleDiv()}>Chnage DIv Contebnt</button>
+    </div>
+  )
+}
