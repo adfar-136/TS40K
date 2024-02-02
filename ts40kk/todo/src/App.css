@@ -7,7 +7,7 @@
   margin: 30px;
   box-sizing: border-box;
 }
-.container h1{
+.container > h1{
   border: 2px solid red;
   text-align: center;
   padding: 20px;
@@ -27,4 +27,53 @@
 }
 .row .item2{
   border: 2px solid red;
+}
+.nav{
+  background-color: #6baae8;
+  padding: 15px;
+  border: none;
+  border-radius: 20;
+}
+.nav-section li{
+  background-color: #2cd8bc;
+  padding: 10px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  list-style: none;
+  text-align: center;
+  width: 80%;
+  cursor: pointer;
+}
+.inbox{
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 2fr 3fr;
+  background-color: #6baae8;
+  padding: 40px;
+  border-radius: 20px;
+  height: 50vh;
+}
+.form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form input{
+ 
+  padding: 20px;
+  border-radius: 20px;
+}
+.btn{
+  background-color: aquamarine;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  margin: 10px;
+}
+.inner-items li{
+  font-size: 25px;
+ 
+  padding: 5px;
+
 }
