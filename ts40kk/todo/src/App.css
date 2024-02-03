@@ -8,31 +8,27 @@
   box-sizing: border-box;
 }
 .container > h1{
-  border: 2px solid red;
+ 
   text-align: center;
   padding: 20px;
   width: 90%;
 }
 .container .row{
-  border: 2px solid blue;
   width: 90%;
+  height: 90%;
   padding: 20px;
   display: grid;
   grid-template-columns: 2fr 5fr;
   gap: 20px;
+  border-radius: 20px;
 
 }
-.row .item1{
-  border: 2px solid red;
-}
-.row .item2{
-  border: 2px solid red;
-}
+
 .nav{
   background-color: #6baae8;
   padding: 15px;
   border: none;
-  border-radius: 20;
+  border-radius: 20px;
 }
 .nav-section li{
   background-color: #2cd8bc;

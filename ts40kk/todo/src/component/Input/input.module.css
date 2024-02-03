@@ -1,0 +1,17 @@
+.inputform{
+    display: flex;
+    flex-direction: column;
+}
+.inputform label{
+    font-weight: 700;
+    font-size: 1rem;
+    color: #313131;
+}
+.inputform input{
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid #dddddd;
+    padding: 12px 10px;
+    color: #000;
+    margin-top: 10px;
+}

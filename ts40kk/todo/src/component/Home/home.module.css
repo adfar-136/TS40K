@@ -1,0 +1,25 @@
+.navbar{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: cadetblue;
+    padding: 30px;
+}
+.navbar ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 30%;
+
+}
+.navbar ul li{
+    list-style:  none;
+    padding: 10px;
+    font-weight: bold;
+    background-color: aquamarine;
+    border-radius: 10px;
+    
+}
+.navbar ul li a{
+    text-decoration: none;
+}
