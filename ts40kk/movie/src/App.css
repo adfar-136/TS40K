@@ -1,0 +1,70 @@
+.movielist{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.card{
+  background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+  border-radius: 20px;
+  padding: 35px;
+  list-style: none;
+  height: 85%;
+  width: 75%;
+  
+
+}
+.title{
+  font-size: 25px;
+  color: rgb(59, 71, 238);
+}
+.fav-heart{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.fav-heart p{
+  font-weight: 700;
+}
+.fav-icon{
+  height: 50px;
+  width: 50px;
+}
+.navbar{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgb(131,58,180);
+background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 13%, rgba(252,176,69,1) 100%);
+}
+.nav{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+}
+.nav li{
+  background-color: aquamarine;
+  padding: 10px;
+  border-radius: 15px;
+  list-style: none;
+  text-align: center;
+}
+.nav li a{
+  text-decoration: none;
+}
+.search input{
+  padding: 10px;
+  border-radius: 15px;
+  border: none;
+  margin-right: 5px;
+}
+.search button{ 
+   background-color:aquamarine ;
+   padding: 10px;
+   border-radius: 15px;
+   text-align: center;
+   border: none;
+}
